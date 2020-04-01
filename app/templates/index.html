@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+	{% for c in code %}
+	<div><p>Code: {{c.code}}</div>
+	{% endfor %}
+	
+{% endblock %}
