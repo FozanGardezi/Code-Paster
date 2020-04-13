@@ -22,20 +22,20 @@ def index():
     ]
 	return render_template('index.html',title='home',user=user,posts=posts, code = Code.query.all())
 
-@app.route('/savecode',methods=['POST','GET'])
+@app.route('/savecode',methods=['POST'])
 def	savecode():
 	form = SaveCodeForm()
-	if request.method == "POST":
-		code_recieved = request.form["code"]
-		print(code_recieved)
-		cd = Code(code = code_recieved)
+	code_recieved = request.form["code"]
+	cd = Code(code_recieved)
+	print(cd)
+	db.session.add(cd)
+	db.session.commit()
+	return redirect(url_for('index'))
+	#return redirect(url_for("user",cd = code))
 		
-		db.session.add(cd)
-		db.session.commit()
-		return redirect(url_for('index'))
-		#return redirect(url_for("user",cd = code))
-	else:
-		return render_template("savecode.html")
+@app.route('/renderSaveCode', methods=['GET'])
+def renderSaveCode():
+	return render_template("savecode.html")
 	'''
 	if form.validate_n_submit():
 		flash('code save from user'.format(
