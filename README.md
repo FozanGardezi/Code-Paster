@@ -15,6 +15,6 @@ __Code-Highliter__: highlight.js
 
 ## How To Get Project Started:
 
-set FLASK_APP=savecode.py in savecode directory
+Set `FLASK_APP=savecode.py` in root directory
 
-flask run command to run the project
+To run the project use ` flask run` command
