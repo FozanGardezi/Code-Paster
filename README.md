@@ -3,7 +3,7 @@
 
 ## Requirements
 
-__Tool__: Flask
+__Framework__: Flask
 
 __Database__: Sqlite
 
