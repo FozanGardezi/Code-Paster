@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<html>
+		<head>
+			<title>Login Page</title>
+		</head>
+		<body>
+			<h1>Sign In</h1>
+			<form action ="/wtforms-login" method="post">
+				{{ form.csrf_token }}
+				<p>
+					{{form.username.label}}<br/>
+					{{form.username}}
+					{% for error in form.username.errors %}
+					<span style='color:red'>[{{error}}]</span>
+					{% endfor %}			
+				</p>
+				<p>
+					{{form.password.label}}
+					{{form.password}}
+					{% for error in form.password.errors %}
+					<span style="color : red">[{{error}}]</span>
+					{% endfor %}	
+				</p>
+				<p>
+					{{ form.submit() }}	
+				</p>
+				{% if form.errors %}
+				{{ form.errors }}
+				{% endif %}
+			</form>
+		</body>
+	</html>
+
+
+
+{% endblock %}

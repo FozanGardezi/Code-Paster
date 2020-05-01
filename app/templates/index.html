@@ -4,11 +4,10 @@
 	<div class = "container">
 		{% for c in code %}
 		<div class="card">
-			<p>Code:</p>
+			<p>This Code is written by: {{c.user_id}}</p>
 			<div class="card-body">
-				<pre  >
+				<pre>
 					<code class="python">{{c.code}}</code>
-					
 				</pre>	
 			</div>
 				
