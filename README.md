@@ -1,2 +1,2 @@
 # Flask
-Flask tutorial
+A web app made using Flask to paste code.
